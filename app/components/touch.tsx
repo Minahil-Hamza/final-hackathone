@@ -31,7 +31,7 @@ const Touch = () => {
           {/* Right Section (Image) */}
           <div className="w-full md:w-[890px] h-auto">
             <Image
-              src="/images/blend.png"
+              src={require("../../public/fresh/blend.png")}
               height={800}
               width={800}
               alt="Decorative Furniture"

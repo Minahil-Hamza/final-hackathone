@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '@/app/redux/cartSlice';
+import { addToCart } from '../../redux/cartSlice';
 import { client } from '@/sanity/lib/client';
 import { useWishlist } from '@/app/context/WishlistContext';
 import Link from 'next/link';

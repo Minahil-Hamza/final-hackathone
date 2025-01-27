@@ -14,7 +14,7 @@ const Ceramics = () => {
             {/* Product 1 */}
             <div className="w-full h-auto">
               <Image
-                 src={require('../../public/images/fresh/item/chair.png')}
+                 src={require('../../public/fresh/item/chair.png')}
                 height={700}
                 width={700}
                 alt="chair"
@@ -29,7 +29,7 @@ const Ceramics = () => {
             {/* Product 2 */}
             <div className="w-full h-auto">
               <Image
-                 src={require('../../public/images/fresh/item/vase.png')}
+                 src={require('../../public/fresh/item/vase.png')}
                 height={700}
                 width={700}
                 alt="vase"
@@ -44,7 +44,7 @@ const Ceramics = () => {
             {/* Product 3 */}
             <div className="w-full h-auto">
               <Image
-                 src={require('../../public/images/fresh/item/silky.png')}
+                 src={require('../../public/fresh/item/silky.png')}
                 height={700}
                 width={700}
                 alt="silky vase"
@@ -59,7 +59,7 @@ const Ceramics = () => {
             {/* Product 4 */}
             <div className="w-full h-auto">
               <Image
-                src={require('../../public/images/fresh/item/lamp.png')}
+                src={require('../../public/fresh/item/lamp.png')}
                 height={700}
                 width={700}
                 alt="lamp"

@@ -1,10 +1,12 @@
 "use client";
 import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { client } from "@/sanity/lib/client";
+import {allproducts} from "@/sanity/lib/queries"
 import Image from "next/image";
 import Link from "next/link";
-import WishlistButton from "../components/WishlistButton";
 import { Loader } from "lucide-react";
+import {product} from "../../sanity/schemaTypes/types/product"
+import WishlistButton from "../components/wishlistButton";
 
 interface Product {
   _id: string;
@@ -14,7 +16,7 @@ interface Product {
   slug: string;
 }
 
-const itemsPerPage = 4; // Har page par 4 products dikhayenge
+const itemsPerPage = 4; // 
 
 const ProductsPage = () => {
   const [data, setData] = useState<Product[]>([]);

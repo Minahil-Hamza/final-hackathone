@@ -1,36 +1,27 @@
-// context/WishlistContext.tsx
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+"use client"; // This is an interactive component
 
-interface WishlistContextType {
-  wishlist: any[]; // Define the type for wishlist
-  addToWishlist: (item: any) => void;
-  removeFromWishlist: (item: any) => void;
+import { useWishlist } from "../context/WishlistContext";
+
+interface Product {
+  _id: string;
+  name: string;
+  imageUrl: string;
+  price: number;
+  slug: string;
 }
 
-const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
-
-export const WishlistProvider = ({ children }: { children: ReactNode }) => {
-  const [wishlist, setWishlist] = useState<any[]>([]);
-
-  const addToWishlist = (item: any) => {
-    setWishlist((prev) => [...prev, item]);
-  };
-
-  const removeFromWishlist = (item: any) => {
-    setWishlist((prev) => prev.filter((wishlistItem) => wishlistItem.id !== item.id));
-  };
+export default function WishlistButton({ product }: { product: Product }) {
+  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  const isInWishlist = wishlist.some((item) => item._id === product._id);
 
   return (
-    <WishlistContext.Provider value={{ wishlist, addToWishlist, removeFromWishlist }}>
-      {children}
-    </WishlistContext.Provider>
+    <button
+      className={`mt-2 py-2 px-4 rounded ${
+        isInWishlist ? "bg-red-500 text-white" : "bg-blue-500 text-white"
+      }`}
+      onClick={() => (isInWishlist ? removeFromWishlist(product._id) : addToWishlist(product))}
+    >
+      {isInWishlist ? "Remove from Wishlist" : "Add to Wishlist"}
+    </button>
   );
-};
-
-export const useWishlist = () => {
-  const context = useContext(WishlistContext);
-  if (!context) {
-    throw new Error('useWishlist must be used within a WishlistProvider');
-  }
-  return context;
-};
+}

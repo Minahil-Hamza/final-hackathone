@@ -9,10 +9,10 @@ import slugify from 'slugify';
 
 // Create Sanity client
 const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  projectId: 'yjw4j73m',
+  dataset: 'production',
   useCdn: false,
-  token: process.env.SANITY_API_TOKEN,
+  token: 'sk43WwZHNGoEPtrbj4SJN4kAIHM4hxsR8JRpzwBU1kAoAkSGDjqALI1ThPd8FApkiR6gmRhDIiMgXaLQYukOlO627YjwZuRQnilbueUaHr482CfgobUnuLpX8qOEiPHKk241L6h3YiYBHpm2bvaVWNYqyShNiOIKaQhvLPGhQGL3Y0gf5CgD',
   apiVersion: '2025-01-12',
 });
 

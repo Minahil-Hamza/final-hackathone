@@ -6,10 +6,7 @@ import Ceramics from "./ceramics";
 import Product from "./product";
 import Benefit from "./benefit";
 import Touch from "./touch";
-import ProductListing from "./ProductListing";
-
-
-export default function Home() {
+import ProductListing from "./ProductListing";export default function Home() {
   return (
    <>
    <Hero />
@@ -19,6 +16,7 @@ export default function Home() {
    <Benefit />
    <Touch />
 <ProductListing/>
+
    
 
    </>
